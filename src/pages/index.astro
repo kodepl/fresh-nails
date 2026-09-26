@@ -1,0 +1,52 @@
+---
+import { getCollection } from "astro:content";
+import Shell from "../layouts/Shell.astro";
+const posts = (await getCollection("paznokcie")).sort((a, b) => +b.data.pubDate - +a.data.pubDate);
+const lead = posts[0];
+const rest = posts.slice(1, 7);
+const shades = [
+  ["#f7d6dc", "mleko"],
+  ["#e7a0ab", "pąk"],
+  ["#c47c8a", "malina"],
+  ["#8d5a66", "śliwka"],
+  ["#f3efe8", "porcelana"],
+  ["#1f1a1c", "atrament"],
+];
+---
+<Shell title="Fresh Nails | kształt, kolor, skórki" description="Portal o paznokciach: kształt płytki, french, hybryda i przerwa od lakieru. Fresh Nails, Gdańsk.">
+  <section class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-8 md:grid-cols-2">
+    <div>
+      <p class="text-xs uppercase tracking-[0.28em] text-[#c47c8a]">Gdańsk · Długa</p>
+      <h1 class="mt-3 font-display text-6xl leading-[0.95] md:text-7xl">Świeży lakier,<br/>spokojna płytka.</h1>
+      <p class="mt-5 max-w-md text-lg leading-relaxed text-[#3a2430]/80">Kształt na krótkim paznokciu, french bez muzeum i tydzień po ściągnięciu hybrydy. Piszemy z fotela.</p>
+      <div class="mt-6 flex gap-3">
+        {shades.map(([hex, name]) => (
+          <span class="grid justify-items-center gap-1 text-[10px] uppercase tracking-wider">
+            <span class="h-9 w-9 rounded-full border border-black/10" style={`background:${hex}`}></span>
+            {name}
+          </span>
+        ))}
+      </div>
+    </div>
+    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1000&h=1200&q=80" alt="" class="h-[28rem] w-full rounded-[2.5rem] object-cover" />
+  </section>
+  {lead && (
+    <a href={`/paznokcie/${lead.slug}/`} class="mx-auto grid max-w-6xl items-center gap-6 px-5 py-6 md:grid-cols-[1fr_1.2fr]">
+      <img src={lead.data.image} alt="" class="h-64 w-full rounded-[2rem] object-cover" />
+      <div>
+        <p class="text-xs uppercase tracking-[0.22em] text-[#c47c8a]">{lead.data.category}</p>
+        <h2 class="mt-2 font-display text-4xl">{lead.data.title}</h2>
+        <p class="mt-3 text-[#3a2430]/75">{lead.data.description}</p>
+      </div>
+    </a>
+  )}
+  <section class="mx-auto grid max-w-6xl gap-4 px-5 py-8 sm:grid-cols-2 lg:grid-cols-3">
+    {rest.map((post) => (
+      <a href={`/paznokcie/${post.slug}/`} class="rounded-[1.6rem] bg-white p-4 shadow-sm">
+        <img src={post.data.image} alt="" class="h-40 w-full rounded-[1.2rem] object-cover" />
+        <p class="mt-3 text-xs uppercase tracking-widest text-[#c47c8a]">{post.data.category}</p>
+        <h3 class="mt-1 font-display text-2xl leading-tight">{post.data.title}</h3>
+      </a>
+    ))}
+  </section>
+</Shell>

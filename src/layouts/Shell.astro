@@ -1,0 +1,45 @@
+---
+import "../styles/global.css";
+const { title, description } = Astro.props;
+const path = Astro.url.pathname;
+---
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="canonical" href={`https://www.freshnails.pl${path}`} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@420;560&family=Instrument+Serif&display=swap" rel="stylesheet" />
+    <script is:inline>if(location.hostname==="freshnails.pl")location.replace(location.href.replace("://","://www."));</script>
+  </head>
+  <body class="bg-[#fbf6f4] text-[#3a2430] font-sans">
+    <header class="mx-auto flex max-w-6xl items-center justify-between px-5 py-6">
+      <a href="/" class="font-display text-4xl text-[#3a2430]">Fresh<span class="text-[#e7a0ab]">.</span></a>
+      <nav class="flex gap-4 text-sm">
+        <a href="/paznokcie/">Paznokcie</a>
+        <a href="/o-nas/">Studio</a>
+        <a href="/kontakt/">Napisz</a>
+      </nav>
+    </header>
+    <slot />
+    
+    <footer class="mt-16 bg-[#3a2430] text-[#fbf6f4]">
+      <div class="mx-auto flex max-w-6xl flex-wrap items-end justify-between gap-6 px-5 py-10">
+        <div>
+          <p class="font-display text-3xl">Fresh Nails</p>
+          <p class="mt-2 max-w-sm text-sm opacity-70">Kształt, kolor, skórki. Paznokcie opisane z fotela, nie z katalogu.</p>
+        </div>
+        <div class="flex gap-5 text-sm">
+          <a href="/paznokcie/">Archiwum</a>
+          <a href="/o-nas/">O nas</a>
+          <a href="/kontakt/">Kontakt</a>
+          <a href="/polityka-prywatnosci/">Prywatność</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
