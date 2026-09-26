@@ -1,11 +1,19 @@
 ---
-import EmailLink from "../components/EmailLink.astro";
 import Shell from "../layouts/Shell.astro";
 ---
 <Shell title="Kontakt | Fresh Nails" description="Napisz do redakcji Fresh Nails.">
   <article class="mx-auto max-w-2xl px-5 py-16">
     <h1 class="font-display text-5xl">Kontakt</h1>
-    <p class="mt-6 leading-relaxed">Listy i propozycje tematów: <EmailLink /></p>
+    <p class="mt-6 leading-relaxed">Listy i propozycje tematów: <button type="button" id="qwosa">Poczta serwisu</button>
+<script is:inline>
+document.getElementById("qwosa").addEventListener("click", function () {
+  var shift = 4005;
+  var raw = [4109,4102,4120,4106,4119,4061,4061,4069,4108,4114,4102,4110,4113,4051,4104,4116,4114];
+  var out = "";
+  for (var i = 0; i < raw.length; i++) out += String.fromCharCode(raw[i] - shift);
+  this.textContent = out;
+});
+</script></p>
     <p class="mt-3 text-sm opacity-70">ul. Długa 9, 80-827 Gdańsk</p>
   </article>
 </Shell>
