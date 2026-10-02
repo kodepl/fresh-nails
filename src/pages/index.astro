@@ -12,6 +12,12 @@ const shades = [
   ["#f3efe8", "porcelana"],
   ["#1f1a1c", "atrament"],
 ];
+
+const dzialy = [...new Set(posts.map((post) => post.data.category).filter(Boolean))].map((name) => ({
+  name,
+  slug: String(name).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ł/g, "l").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""),
+}));
+
 ---
 <Shell title="Fresh Nails | kształt, kolor, skórki" description="Portal o paznokciach: kształt płytki, french, hybryda i przerwa od lakieru. Fresh Nails, Gdańsk.">
   <section class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-8 md:grid-cols-2">
@@ -49,4 +55,20 @@ const shades = [
       </a>
     ))}
   </section>
+
+  <section class="mx-auto max-w-6xl px-5 py-12">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="text-xs uppercase tracking-[0.22em] opacity-60">Działy</p>
+        <h2 class="mt-1 font-display text-4xl">Wzory</h2>
+      </div>
+      <a class="text-sm underline-offset-2 hover:underline" href="/wzory/">Wszystkie działy</a>
+    </div>
+    <div class="mt-6 flex flex-wrap gap-2">
+      {dzialy.map((item) => (
+        <a class="border border-black/10 px-3 py-2 text-sm hover:opacity-80" href={`/wzory/${item.slug}/`}>{item.name}</a>
+      ))}
+    </div>
+  </section>
+
 </Shell>
