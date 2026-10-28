@@ -1,6 +1,6 @@
 ---
 title: "Krótki manicure na wesele: piękno bez przesady"
-description: "Prosty i elegancki manicure, który idealnie sprawdzi się na wesele."
+description: "Krótki manicure na wesele: kształt, stonowany kolor i skórki bez przesady."
 pubDate: "2026-09-17"
 author: "Ola Firlej"
 authorBio: "Stylistka paznokci. Pisze o kształcie, skórkach i kolorze, który da się nosić w tramwaju."
@@ -53,6 +53,6 @@ Dla inspiracji, oto przykład prostego i eleganckiego manicure, który możesz w
 | Zdobienie           | Cienka linia na jednym lub dwóch paznokciach |
 | Pielęgnacja skórek  | Olejek do skórek, krem do rąk              |
 
-### 
+## Bez walki z suknią
 
-Krótki manicure na wesele to doskonała okazja, aby zabłysnąć naturalnym pięknem swoich paznokci. Dzięki prostym kształtom, stonowanym kolorom i zadbanym skórkom, możesz stworzyć efektowny look, który będzie harmonizował z całą stylizacją. Pamiętaj, aby dostosować go do swojego stylu oraz okazji, a efekt na pewno zachwyci wszystkich gości.
+Krótki manicure na wesele ma trzymać się dłoni, nie konkurować z suknią. Prosty kształt, stonowany kolor i spokojne skórki zwykle wystarczą. Dopasuj odcień do swojej karnacji i światła sali, a zdobienie zostaw cienkie, jeśli w ogóle.

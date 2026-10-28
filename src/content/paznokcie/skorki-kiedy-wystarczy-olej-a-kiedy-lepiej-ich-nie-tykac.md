@@ -1,6 +1,6 @@
 ---
 title: "Skórki: kiedy wystarczy olej, a kiedy lepiej ich nie tykać"
-description: "Zrozumienie pielęgnacji skórek jest kluczowe dla zdrowych paznokci."
+description: "Skórki: kiedy wystarczy olejek, a kiedy lepiej ich nie ruszać przy pęknięciach i stanie zapalnym."
 pubDate: "2026-09-21"
 author: "Ola Firlej"
 authorBio: "Stylistka paznokci. Pisze o kształcie, skórkach i kolorze, który da się nosić w tramwaju."
@@ -32,6 +32,6 @@ Są jednak momenty, gdy lepiej nie zbliżać się do skórek. Ignorowanie ich w 
 3. **Sytuacje awaryjne** - Na przykład, przed ważnym wydarzeniem, gdzie skórki mogą być bardziej narażone na uszkodzenia, lepiej ich nie ruszać.
 4. **Nawyk obgryzania** - Jeśli masz tendencję do obgryzania skórek, lepiej skupić się na ich ochronie i nawilżaniu, zamiast podejmować próby ich usuwania.
 
-### 
+## Prosta reguła na dziś
 
-Dbając o skórki, warto znać ich stan oraz potrzeby. Czasami wystarczy kilka kropel oleju, aby przywrócić im zdrowy wygląd, ale w innych sytuacjach lepiej ich nie dotykać. Pamiętaj, że każda skórka jest inna, a ich pielęgnacja powinna być dostosowana do indywidualnych potrzeb. Regularne nawilżanie przynosi korzyści, a w razie wątpliwości zawsze warto skonsultować się ze specjalistą.
+Jeśli skórki są elastyczne i tylko suche, wystarczy olejek. Jeśli widać pęknięcie, zaczerwienienie albo ból, odłóż cięcie i agresywne odsuwanie. Regularne nawilżanie po myciu rąk zwykle daje więcej niż jednorazowe „czyszczenie na ostro” przed wyjściem. W razie stanu zapalnego lepiej zapytać stylistkę albo dermatologa, zamiast kombinować w domu.

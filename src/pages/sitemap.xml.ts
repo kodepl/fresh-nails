@@ -1,8 +1,20 @@
 import { getCollection } from "astro:content";
+
 export async function GET() {
   const posts = await getCollection("paznokcie");
   const origin = "https://www.freshnails.pl";
-  const urls = ["/wzory/", "/w-studio/", "/", "/paznokcie/", "/o-nas/", "/kontakt/", "/polityka-prywatnosci/", ...posts.map((p) => `/paznokcie/${p.slug}/`)];
+  const urls = [
+    "/",
+    "/paznokcie/",
+    "/wzory/",
+    "/w-studio/",
+    "/slownik/",
+    "/przed-wizyta/",
+    "/o-nas/",
+    "/kontakt/",
+    "/polityka-prywatnosci/",
+    ...posts.map((p) => `/paznokcie/${p.slug}/`),
+  ];
   const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls
     .map((u) => `  <url><loc>${origin}${u}</loc></url>`)
     .join("\n")}\n</urlset>`;

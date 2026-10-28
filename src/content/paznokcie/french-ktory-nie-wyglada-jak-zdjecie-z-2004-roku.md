@@ -1,6 +1,6 @@
 ---
 title: "French, który nie wygląda jak zdjęcie z 2004 roku"
-description: "Odkryj nowoczesne podejście do stylizacji french, które zachwyca i inspiruje."
+description: "Nowoczesny french: kształt, kolor, skórki i subtelne dodatki bez efektu zdjęcia z 2004."
 pubDate: "2026-09-23"
 author: "Ola Firlej"
 authorBio: "Stylistka paznokci. Pisze o kształcie, skórkach i kolorze, który da się nosić w tramwaju."
@@ -38,6 +38,6 @@ Nowoczesny french manicure nie musi być nudny. Można dodać różnorodne akcen
 - Brzoskwiniowy
 - Jasny szary
 
-### 
+## Na co dzień, nie na sesję
 
-French manicure w nowoczesnym wydaniu to świetna okazja do zabawy z kolorami i kształtami. Odpowiednia pielęgnacja skórek oraz wybór dodatków pozwolą na stworzenie unikatowego stylu, który będzie pasował do każdego outfitu, nawet tego codziennego. Nie bój się eksperymentować i odkrywać nowe możliwości tej klasycznej stylizacji.
+French w nowszym wydaniu ma sens, gdy trzyma się dłoni w biurze i w tramwaju. Cieńsza linia, cieplejsza baza i spokojne skórki zwykle wyglądają świeżej niż gruba biel i ostre zdobienia. Dobierz kształt do długości płytki, a dodatki zostaw na jeden paznokieć, jeśli nie chcesz, żeby stylizacja krzyczała głośniej niż reszta looku.

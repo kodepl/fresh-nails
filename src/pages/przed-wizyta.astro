@@ -1,0 +1,63 @@
+---
+import Shell from "../layouts/Shell.astro";
+
+const items = [
+  "Mam zdjęcie obecnych paznokci przy dziennym świetle (nie tylko w lampie salonu).",
+  "Wiem, ile milimetrów odrostu mnie irytuje i czy chcę korektę, czy ściągnięcie.",
+  "Zapisałam alergie i reakcje na aceton, metakrylany albo lateks, jeśli je znam.",
+  "Mam realny czas: nie planuję stylizacji 15 minut przed wyjściem z domu.",
+  "Wiem, czy potrzebuję trzymać tydzień przy klawiaturze, czy tylko na jeden wieczór.",
+  "Decyduję o kształcie świadomie: krótki kwadrat, miękki kwadrat albo migdał.",
+  "Nie obcinam skórek na ostro dzień wcześniej, jeśli są pęknięte lub bolą.",
+  "Jeśli biorę przerwę od hybrydy, mówię o tym wprost i proszę o wzmocnienie, nie o kolejną warstwę koloru.",
+];
+---
+<Shell
+  title="Przed wizytą | Fresh Nails"
+  description="Checklista przed manicure: zdjęcie, odrost, alergie, czas i kształt. Do odhaczenia przed salonu."
+>
+  <section class="mx-auto max-w-3xl px-5 py-14">
+    <p class="text-xs uppercase tracking-[0.22em] opacity-60">Narzędzie</p>
+    <h1 class="mt-2 font-display text-5xl">Przed wizytą</h1>
+    <p class="mt-4 max-w-xl text-lg leading-relaxed opacity-80">
+      Osiem punktów, które oszczędzają niedomówienia przy fotelu. Stan zapisuje się lokalnie w tej przeglądarce.
+    </p>
+    <p id="progress-wizyta" class="mt-6 text-sm opacity-65"></p>
+    <ul id="list-wizyta" class="mt-6 space-y-3">
+      {items.map((label, i) => (
+        <li class="check-item border border-[var(--line)] bg-white/70 px-4 py-3">
+          <label class="flex cursor-pointer gap-3 text-sm leading-relaxed">
+            <input type="checkbox" data-i={i} class="mt-1" />
+            <span>{label}</span>
+          </label>
+        </li>
+      ))}
+    </ul>
+    <button id="reset-wizyta" type="button" class="mt-8 border border-[var(--line)] px-4 py-2 text-sm">Wyczyść checklistę</button>
+  </section>
+</Shell>
+<script>
+  const key = "fresh-nails-przed-wizyta-v1";
+  const boxes = [...document.querySelectorAll("#list-wizyta input[type=checkbox]")];
+  const progress = document.getElementById("progress-wizyta");
+  const reset = document.getElementById("reset-wizyta");
+  let state = [];
+  try { state = JSON.parse(localStorage.getItem(key) || "[]"); } catch { state = []; }
+  function save() {
+    const next = boxes.map((box) => box instanceof HTMLInputElement && box.checked);
+    localStorage.setItem(key, JSON.stringify(next));
+    const done = next.filter(Boolean).length;
+    if (progress) progress.textContent = done + " / " + next.length + " gotowe";
+  }
+  boxes.forEach((box, i) => {
+    if (box instanceof HTMLInputElement) {
+      box.checked = Boolean(state[i]);
+      box.addEventListener("change", save);
+    }
+  });
+  reset?.addEventListener("click", () => {
+    boxes.forEach((box) => { if (box instanceof HTMLInputElement) box.checked = false; });
+    save();
+  });
+  save();
+</script>

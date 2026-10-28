@@ -1,0 +1,57 @@
+---
+import Shell from "../layouts/Shell.astro";
+
+const terms = [
+  { term: "Baza (base coat)", def: "Warstwa pod kolor. Chroni płytkę przed pigmentem i pomaga lakierowi trzymać się dłużej." },
+  { term: "Top (top coat)", def: "Warstwa na kolor. Zamyka pigment, dodaje połysk albo mat i chroni przed drobnymi zarysowaniami." },
+  { term: "Hybryda", def: "Lakier utwardzany lampą UV/LED. Trzyma dłużej niż klasyczny, ale ściąganie wymaga ostrożności." },
+  { term: "Żel / budowanie", def: "Materiał do wzmocnienia lub przedłużenia płytki. Inna logika niż cienka hybryda na naturalnym paznokciu." },
+  { term: "Odrost", def: "Pas wolnej, naturalnej płytki przy skórce. Przy hybrydzie często widać go po 2-3 tygodniach." },
+  { term: "French", def: "Stylizacja z jaśniejszą linią na wolnym brzegu. Nowoczesny french bywa cieńszy i cieplejszy w tonie niż w 2004." },
+  { term: "Baby french / babyboom", def: "Delikatniejsza, często mleczna linia zamiast ostrego białego paska." },
+  { term: "Matowy top", def: "Wykończenie bez połysku. Łatwiej zbiera tłuszcz z dłoni, warto go doglądać w ciągu tygodnia." },
+  { term: "Oliwka do skórek", def: "Nawilża wał i skórkę. Nie zastępuje leczenia stanów zapalnych ani nie zaszywa pęknięć." },
+  { term: "Zmatowienie płytki", def: "Lekkie przetarcie bloku lub pilnika przed hybrydą, żeby warstwa miała przyczepność." },
+  { term: "Aceton", def: "Rozpuszczalnik do klasycznego lakieru i części systemów hybrydowych. Suszy skórę, warto olejkować po użyciu." },
+  { term: "Kwadrat / miękki kwadrat / migdał", def: "Kształty wolnego brzegu. Na krótkiej płytce miękki kwadrat zwykle mniej zahacza o klawiaturę." },
+];
+---
+<Shell
+  title="Słownik płytki | Fresh Nails"
+  description="Krótki słownik manicure: hybryda, odrost, baza, top, french i skórki. Bez żargonu z katalogu."
+>
+  <section class="mx-auto max-w-3xl px-5 py-14">
+    <p class="text-xs uppercase tracking-[0.22em] opacity-60">Narzędzie</p>
+    <h1 class="mt-2 font-display text-5xl">Słownik płytki</h1>
+    <p class="mt-4 max-w-xl text-lg leading-relaxed opacity-80">
+      Dwanaście pojęć, które wracają w tekstach Fresh Nails. Definicje krótkie, pod codzienne decyzje przy stoliku, nie pod egzamin.
+    </p>
+    <label class="mt-8 block text-sm opacity-70" for="q-slownik">Filtruj hasła</label>
+    <input id="q-slownik" class="mt-2 w-full border border-[var(--line)] bg-white px-4 py-3" type="search" placeholder="np. odrost, top, french" autocomplete="off" />
+    <dl id="list-slownik" class="mt-8 divide-y divide-[var(--line)]">
+      {terms.map((item) => (
+        <div class="term py-5" data-term={(item.term + " " + item.def).toLowerCase()}>
+          <dt class="font-display text-2xl">{item.term}</dt>
+          <dd class="mt-2 text-sm leading-relaxed opacity-80">{item.def}</dd>
+        </div>
+      ))}
+    </dl>
+    <p id="empty-slownik" class="mt-6 hidden text-sm opacity-60">Brak haseł dla tego filtra.</p>
+  </section>
+</Shell>
+<script>
+  const input = document.getElementById("q-slownik");
+  const empty = document.getElementById("empty-slownik");
+  const terms = [...document.querySelectorAll(".term")];
+  function draw() {
+    const q = (input instanceof HTMLInputElement ? input.value : "").trim().toLowerCase();
+    let shown = 0;
+    for (const node of terms) {
+      const hit = !q || (node.getAttribute("data-term") || "").includes(q);
+      node.classList.toggle("hidden", !hit);
+      if (hit) shown += 1;
+    }
+    empty?.classList.toggle("hidden", shown > 0);
+  }
+  input?.addEventListener("input", draw);
+</script>
